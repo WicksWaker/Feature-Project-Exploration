@@ -13,25 +13,29 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         Movement();
-        actOnSight();
     }
 
     public void Movement()
     {
-        //moving enemies around
-    }
-
-    public void actOnSight()
-    {
-        //interpolate towards the rats- attack
+        //moving enemies around- x & z axis, cannot jump
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         //attack
-        //loseHealth- when rats touch, decrease in scale
+        //if ()
+        //{
+            //loseHealth- when rats touch, decrease in scale
+            //interpolate towards the rats- attack
+            //alertAllies();
+        //}
+        
+
         //alert- when colliding with rats- alert other enemies
-        //all enemies interpolate to rats
+         void alertAllies()
+        { 
+            //have other enemies interpolate & have an alert sign go off above head (originally set to inactive)
+        }
     }
 
 
