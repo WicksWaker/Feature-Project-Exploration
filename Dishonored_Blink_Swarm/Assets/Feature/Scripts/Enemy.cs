@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int enemyHealth;
+    public float speed;
+    public int swordSwingMax;
+    public int swordSwingMin;
+    //list of enemies- to call to
+
+    public void Movement()
     {
-        
+        //moving enemies around
     }
 
-    // Update is called once per frame
-    void Update()
+    public void actOnSight()
     {
-        
+        //interpolate towards the rats- attack
     }
+
+
+    //OnCollision- attack
+    //loseHealth- when rats touch, decrease in scale
+    //alert- when colliding with rats- alert other enemies
+    //all enemies interpolate to rats
+    private void OnCollisionEnter(Collision collision)
+    {
+        //attack
+        //loseHealth- when rats touch, decrease in scale
+        //alert- when colliding with rats- alert other enemies
+        //all enemies interpolate to rats
+    }
+
+
 }
