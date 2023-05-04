@@ -10,6 +10,12 @@ public class Enemy : MonoBehaviour
     public int swordSwingMin;
     //list of enemies- to call to
 
+    public void Awake()
+    {
+        Movement();
+        actOnSight();
+    }
+
     public void Movement()
     {
         //moving enemies around
@@ -20,11 +26,6 @@ public class Enemy : MonoBehaviour
         //interpolate towards the rats- attack
     }
 
-
-    //OnCollision- attack
-    //loseHealth- when rats touch, decrease in scale
-    //alert- when colliding with rats- alert other enemies
-    //all enemies interpolate to rats
     private void OnCollisionEnter(Collision collision)
     {
         //attack
