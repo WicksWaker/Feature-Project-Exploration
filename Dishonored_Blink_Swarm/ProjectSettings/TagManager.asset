@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Rat
+  - whisp
+  - Wall
+  - enemy
+  - Swarm_Spawner
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 360641394448660892}
   - component: {fileID: 360641394448660891}
   - component: {fileID: 360641394448660890}
+  - component: {fileID: 1791527213200666719}
+  - component: {fileID: 5383546775494991789}
   m_Layer: 0
   m_Name: rat_Prefab_03
   m_TagString: Untagged
@@ -95,3 +97,48 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1791527213200666719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360641394448660889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59365e38349deff4a988f9cf2d4bc40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p0: {x: 0, y: 0, z: 0}
+  p1: {x: 3, y: 4, z: 5}
+  enemy: {fileID: 6885274197488253152, guid: 6371e0950afc90b459992d7f235ec6ea, type: 3}
+  spawner: {fileID: 0}
+  timeDuration: 1
+  checkToCalculate: 1
+  p01: {x: 0, y: 0, z: 0}
+  moving: 0
+  timeStart: 0
+  grounded: 1
+  ratHealth: 2
+--- !u!195 &5383546775494991789
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360641394448660889}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.49999997
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.99999994
+  m_BaseOffset: 0.49999997
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

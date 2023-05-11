@@ -5,29 +5,32 @@ using UnityEngine;
 public class Powers : MonoBehaviour
 {
     //Blink GOs
-    [SerializeField] GameObject blink_Use_Indicator;
-    [SerializeField] GameObject blink_Portal;
-    [SerializeField] GameObject _blinkParent;
+    GameObject[] blinkItems;
+
+    [SerializeField] GameObject blink_Use_Indicator, blink_Portal, _blinkParent;
 
     //Swarm GOs
-    [SerializeField] GameObject portalPrefab;
-    [SerializeField] GameObject swarm_Use_Indicator;
-    [SerializeField] GameObject _SwarmParent;
-    [SerializeField] GameObject swarm_Container;
-    [SerializeField] GameObject rat_Container;
-    [SerializeField] GameObject whisp_Container;
-    [SerializeField] GameObject portal_Container;
+    [SerializeField] GameObject portalPrefab, swarm_Use_Indicator, _SwarmParent, swarm_Container, rat_Container, whisp_Container, portal_Container;
 
     //energy ints- normal number (40), decrease by 5
-    public int Energy;
-    public int decreasedByFive;
+    public int Energy, decreasedByFive;
     
     //both parents need to be a singleton
 
     public void Start()
     {
-        decreaseandIncreaseEnergy();
-        whereToPlace();
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            decreaseandIncreaseEnergy();
+            whereToPlace();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            decreaseandIncreaseEnergy();
+            whereToPlaceTwo();
+        }
+        
     }
 
     public void Update()
@@ -38,7 +41,7 @@ public class Powers : MonoBehaviour
     IEnumerator decreaseandIncreaseEnergy()
     {
         //still need to key this to the 'E' && 'F' key thru new input
-        if (GetComponent<Blink>() && Energy >= 0 || GetComponent<Swarm>() && Energy >= 0)
+        if (Input.GetKeyDown(KeyCode.F) && Energy >= 0 || Input.GetKeyDown(KeyCode.E) && Energy >= 0)
         {
             //when Blink or Swarm is used- bring down energy by 5f
             Energy -= 5;
@@ -63,7 +66,7 @@ public class Powers : MonoBehaviour
         //turns on portal for blink and swarm
         //shows where it will spawn
         //turns back off when component not in use
-        if (GetComponent<Blink>())
+        if (Input.GetKeyDown(KeyCode.F))
         {
             _blinkParent.SetActive(true);
         }
@@ -71,8 +74,11 @@ public class Powers : MonoBehaviour
         {
             _blinkParent.SetActive(false);
         }
+    }
 
-        if (GetComponent<Swarm>())
+    public void whereToPlaceTwo()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
         {
             _SwarmParent.SetActive(true);
         }
